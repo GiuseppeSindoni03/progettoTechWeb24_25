@@ -1,0 +1,11 @@
+# Ignorare le dipendenze di Node.js
+my-angular-app/node_modules/
+hive-mind-server/node_modules/
+
+# Ignorare la build di Angular
+my-angular-app/dist/
+
+# Ignorare file temporanei
+.vscode/
+.idea/
+.DS_Store
