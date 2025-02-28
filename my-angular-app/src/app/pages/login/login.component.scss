@@ -1,74 +1,96 @@
 
 
-.login-page {
-  
+.login-component {
   display: grid;
-  grid-template-areas: "header" "main"  "footer";
-  grid-template-rows: auto 1fr auto;
-  width: 100vw;
-  
+  grid-template-rows: auto 1fr auto; /* Righe per il titolo, contenuto e footer */
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  width: 100vh;
+  min-height: 100vh; /* Altezza minima della viewport */
+  justify-items: center; /* Centra gli elementi orizzontalmente */
   justify-content: center;
-  height: 100%;
-  background-color: #ffffff;
-  font-family: 'Inter' sans-serif; /* Usa il font corretto */
-  font-style: bold;
 }
 
 /* Titolo */
 .title {
-  grid-area: "header";
-  margin-top: 70px;
-  font-size: 3em;
-  color: #0d0d52; 
-  margin-bottom: 15px;
-  font-weight:normal ;
+  grid-area: header;
+  font-size: 2.5em;
   text-align: center;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Roboto' san-serif;
-
+  margin-top: 20px;
+  
 }
+
 
 /* Contenitore principale */
-.login-container {
-  grid-area: "main";
-  margin-top: 80px;
+.login-page {
+  grid-area: main;
   display: flex;
-  align-items:center;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
   width: 80%;
   max-width: 1000px;
-  gap: 200px;
+  height: 100%;
+  min-height: 70vh;
+  margin: auto;
 }
 
-/* Immagine */
-.login-image {
-  flex: 1; /* Occupa spazio senza ridursi */
+.login-image, .login-form {
   display: flex;
   justify-content: center;
-}
-
-.login-image img {
-  width: 350px;
-  height: auto;
-  object-fit: cover;
-
-}
-
-/* Form */
-/* Form */
-.login-form {
+  align-items: center;
   flex: 1;
+}
+
+
+.login-form {
+  flex: 1; /* Occupa l'altra metà dello spazio */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 400px; /* Assicura che il form non sia troppo stretto */
-  padding: 50px;
+  min-width: 400px;
+  padding: 30px;
   width: 100%;
-  text-align: center; /* Centra tutto il contenuto */
-  margin-bottom: 5%;
-  
+  text-align: center;
 }
+
+
+/* Footer */
+footer {
+  grid-area: footer;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Contenitore del footer */
+.footer-nav {
+  display: flex;
+  gap: 10px; /* Distanza tra i link */
+  align-items: center;
+  font-size: 1em;
+  font-weight: 500;
+  color: #0d0d52;
+}
+
+nav a, nav span {
+  color: #0d0d52;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
 
 h2 {
   font-size: 3em;
@@ -105,7 +127,7 @@ h2 {
 /* Pulsanti */
 /* Pulsante Accedi */
 .login-btn {
-  width: 80%; /* Rendi il pulsante largo come il contenitore */
+  width: 300px; /* Rendi il pulsante largo come il contenitore */
   max-width: 350px; /* Stessa larghezza degli input */
   padding: 12px;
   background-color: transparent;
@@ -131,6 +153,7 @@ h2 {
 
 /* Divider */
 .divider {
+  content: "o";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,20 +165,11 @@ h2 {
   position: relative;
 }
 
-.divider::before {
-  content: "o";
-  position: absolute;
-  top: -10px;
-  background: white;
-  color: #0d0d52;
-  padding: 0 8px;
-  font-size: 18px;
-  font-weight: bold;
-}
+
 
 /* Bottone Crea Account */
 .signup-btn {
-  width: 76%; /* Stessa larghezza di input e login-btn */
+  width: 300px; 
   padding: 12px;
   background-color: #0d0d52;
   color: white;
@@ -176,37 +190,89 @@ h2 {
   
 }
 
-/* Footer */
-footer {
-  grid-area: footer;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
+
+//MEDIA QUERY
+
+/* ✅ Tablet e schermi medi (max 1024px) */
+@media screen and (max-width: 1024px) {
+  .login-page {
+    flex-direction: column; /* Imposta il layout a colonna */
+    gap: 30px;
+    width: 90%; /* Maggiore adattabilità */
+    min-height: auto;
+  }
+
+  .login-image img {
+    width: 250px; /* Riduce la grandezza dell'immagine */
+  }
+
+  .login-form {
+    min-width: auto;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form-group input {
+    width: 100%;
+  }
+
+  .login-btn, .signup-btn {
+    width: 100%; /* Adatta i pulsanti alla larghezza */
+  }
+
+  .title {
+    font-size: 2em; /* Riduce il titolo per una migliore leggibilità */
+  }
 }
 
-/* Contenitore del footer */
-.footer-nav {
-  display: flex;
-  gap: 10px; /* Distanza tra i link */
-  align-items: center;
-  font-size: 1em;
-  font-weight: 500;
-  color: #0d0d52;
-}
+/* ✅ Mobile (max 768px) */
+@media screen and (max-width: 768px) {
+  .login-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
+  .title {
+    font-size: 1.8em;
+    text-align: center;
+  }
 
+  .login-page {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
 
-/* Stili generali per i link */
-nav a, nav span {
-  color: #0d0d52;
-  text-decoration: none;
-  font-size: 1em;
-}
+  .login-image img {
+    width: 200px; /* Riduce ulteriormente l'immagine */
+  }
 
-nav a:hover {
-  text-decoration: underline;
+  .login-form {
+    width: 90%;
+    min-width: auto;
+    padding: 15px;
+    margin-right: auto;
+  }
+
+  .form-group input {
+    font-size: 16px; /* Migliore leggibilità */
+    padding: 10px;
+    padding-right: 20px;
+  }
+
+  .login-btn {
+    width: 90%; /* Adatta i pulsanti agli schermi piccoli */
+  }
+
+  .signup-btn {
+    width: 60%;
+  }
+
+  footer {
+    font-size: 0.8em; /* Riduce la grandezza del footer */
+    padding: 8px 0;
+  }
 }
