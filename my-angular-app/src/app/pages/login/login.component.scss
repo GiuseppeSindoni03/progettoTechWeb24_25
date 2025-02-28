@@ -1,11 +1,12 @@
-/* Stili generali */
 
 
 .login-page {
   
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-areas: "header" "main"  "footer";
+  grid-template-rows: auto 1fr auto;
+  width: 100vw;
+  
   justify-content: center;
   height: 100%;
   background-color: #ffffff;
@@ -15,9 +16,10 @@
 
 /* Titolo */
 .title {
+  grid-area: "header";
   margin-top: 70px;
-  font-size: 2.5em;
-  color: #000399; 
+  font-size: 3em;
+  color: #0d0d52; 
   margin-bottom: 15px;
   font-weight:normal ;
   text-align: center;
@@ -28,39 +30,54 @@
 
 /* Contenitore principale */
 .login-container {
-  margin-top: 110px;
+  grid-area: "main";
+  margin-top: 80px;
   display: flex;
   align-items:center;
-  justify-content: center;
+  justify-content: space-between;
   width: 80%;
   max-width: 1000px;
+  gap: 200px;
 }
 
 /* Immagine */
+.login-image {
+  flex: 1; /* Occupa spazio senza ridursi */
+  display: flex;
+  justify-content: center;
+}
+
 .login-image img {
-  width: 300px; /* Dimensione simile al Figma */
+  width: 350px;
   height: auto;
   object-fit: cover;
-  //box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Form */
+/* Form */
 .login-form {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items:center;
-  justify-content: space-a;
+  align-items: center;
+  justify-content: center;
+  min-width: 400px; /* Assicura che il form non sia troppo stretto */
+  padding: 50px;
   width: 100%;
-  padding: 20px;
+  text-align: center; /* Centra tutto il contenuto */
+  margin-bottom: 5%;
+  
 }
 
 h2 {
   font-size: 3em;
-  font-weight: bold;
+  font-weight:normal !important;
 
   color: #0d0d52;
   text-align: center;
   margin-bottom: 20px;
+  width: 100%; /* Assicura che sia centrato rispetto agli input */
 }
 
 /* Input */
@@ -68,34 +85,44 @@ h2 {
   width: 100%;
   margin-bottom: 15px;
   justify-content: center;
+  
 }
 
 .form-group input {
-  width: 120%;
+  width: 350px;
   padding: 12px;
   border: 2px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 20px;
   outline: none;
+
 }
 
-input:focus {
+.form-group input:focus {
   border-color: #0d0d52;
 } 
 
 /* Pulsanti */
+/* Pulsante Accedi */
 .login-btn {
-  width: 90%;
+  width: 80%; /* Rendi il pulsante largo come il contenitore */
+  max-width: 350px; /* Stessa larghezza degli input */
   padding: 12px;
   background-color: transparent;
   color: #0d0d52;
-  border: 2px solid #0d0d52;
-  border-radius: 8px;
+  border: 1px solid #0d0d52;
+  border-radius: 30px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10%;
 }
+
 
 .login-btn:hover {
   background-color: #0d0d52;
@@ -104,33 +131,54 @@ input:focus {
 
 /* Divider */
 .divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   border: none;
   height: 1px;
   background: #ccc;
   margin: 20px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "o";
+  position: absolute;
+  top: -10px;
+  background: white;
+  color: #0d0d52;
+  padding: 0 8px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Bottone Crea Account */
 .signup-btn {
-  width: 15em;
+  width: 76%; /* Stessa larghezza di input e login-btn */
   padding: 12px;
   background-color: #0d0d52;
   color: white;
-  border: none;
-  border-radius: 8px;
+  border: 1px solid #0d0d52;
+  border-radius: 30px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup-btn:hover {
-  background-color: #090936;
+  background-color: #ffffff;
+  color: #0d0d52;
+  
 }
 
 /* Footer */
 footer {
+  grid-area: footer;
   position: absolute;
   bottom: 10px;
   width: 100%;
@@ -140,24 +188,17 @@ footer {
   padding: 10px 0;
 }
 
-nav {
+/* Contenitore del footer */
+.footer-nav {
   display: flex;
-  justify-content: space-between;
-  width: 60%;
-  max-width: 800px;
+  gap: 10px; /* Distanza tra i link */
+  align-items: center;
+  font-size: 1em;
+  font-weight: 500;
+  color: #0d0d52;
 }
 
-/* Sezione sinistra */
-.footer-left {
-  text-align: left;
-  flex: 1;
-}
 
-/* Sezione centrale */
-.footer-center {
-  text-align: center;
-  flex: 1;
-}
 
 /* Stili generali per i link */
 nav a, nav span {
