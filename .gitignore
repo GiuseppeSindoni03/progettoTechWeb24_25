@@ -9,3 +9,4 @@ my-angular-app/dist/
 .vscode/
 .idea/
 .DS_Store
+hive-mind-server/.env
