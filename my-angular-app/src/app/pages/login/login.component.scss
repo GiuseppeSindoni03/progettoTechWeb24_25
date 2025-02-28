@@ -1,0 +1,171 @@
+/* Stili generali */
+
+
+.login-page {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: 'Inter' sans-serif; /* Usa il font corretto */
+  font-style: bold;
+}
+
+/* Titolo */
+.title {
+  margin-top: 70px;
+  font-size: 2.5em;
+  color: #000399; 
+  margin-bottom: 15px;
+  font-weight:normal ;
+  text-align: center;
+  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto' san-serif;
+
+}
+
+/* Contenitore principale */
+.login-container {
+  margin-top: 110px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+/* Immagine */
+.login-image img {
+  width: 300px; /* Dimensione simile al Figma */
+  height: auto;
+  object-fit: cover;
+  //box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-a;
+  width: 100%;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: bold;
+
+  color: #0d0d52;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.form-group input {
+  width: 120%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #0d0d52;
+} 
+
+/* Pulsanti */
+.login-btn {
+  width: 90%;
+  padding: 12px;
+  background-color: transparent;
+  color: #0d0d52;
+  border: 2px solid #0d0d52;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0d0d52;
+  color: white;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+/* Bottone Crea Account */
+.signup-btn {
+  width: 15em;
+  padding: 12px;
+  background-color: #0d0d52;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #090936;
+}
+
+/* Footer */
+footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  max-width: 800px;
+}
+
+/* Sezione sinistra */
+.footer-left {
+  text-align: left;
+  flex: 1;
+}
+
+/* Sezione centrale */
+.footer-center {
+  text-align: center;
+  flex: 1;
+}
+
+/* Stili generali per i link */
+nav a, nav span {
+  color: #0d0d52;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
