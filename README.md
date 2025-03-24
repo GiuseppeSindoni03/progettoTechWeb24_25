@@ -47,7 +47,7 @@ Assicurati di:
 
 ### 5. Configura le variabili d'ambiente
 All'interno del backend avrai un file .env con la seguente struttura:
-- `MONGO_URI="mongodb+srv://<user>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"`
+- `MONGO_URI="url del cluster Atlas`
 - `PORT=3000`
 - `JWT_SECRET="una-stringa-segreta"`
 - `AWS_ACCESS_KEY_ID="la-tua-access-key"`
