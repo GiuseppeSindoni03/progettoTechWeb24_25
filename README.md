@@ -47,13 +47,13 @@ Assicurati di:
 
 ### 5. Configura le variabili d'ambiente
 All'interno del backend avrai un file .env con la seguente struttura:
-- MONGO_URI="mongodb+srv://<user>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"
-- PORT=3000
-- JWT_SECRET="una-stringa-segreta"
-- AWS_ACCESS_KEY_ID="la-tua-access-key"
-- AWS_SECRET_ACCESS_KEY="la-tua-secret-key"
-- AWS_BUCKET_NAME="nome-del-bucket"
-- AWS_REGION="regione"
+- `MONGO_URI="mongodb+srv://<user>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority"`
+- `PORT=3000`
+- `JWT_SECRET="una-stringa-segreta"`
+- `AWS_ACCESS_KEY_ID="la-tua-access-key"`
+- `AWS_SECRET_ACCESS_KEY="la-tua-secret-key"`
+- `AWS_BUCKET_NAME="nome-del-bucket"`
+- `AWS_REGION="regione"`
 
 **Mi raccomando non condividere queste informazioni con nessuno**
 
